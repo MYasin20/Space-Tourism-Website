@@ -55,19 +55,21 @@
   z-index: 2;
 }
 .nav-lists {
-  display: flex;
   flex: 50%;
-  align-items: center;
+  display: flex;
+  /*align-items: center; */
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
   font-family: var(--font-family-secondary);
   letter-spacing: var(--letter-space-nav);
   padding-left: 95px;
+  height: 80px;
 }
 
 .list-item {
   margin-right: 30px;
-  padding: 20px 0;
+  padding-top: 26px;
+  height: inherit;
 }
 .list-item:last-child {
   margin-right: 150px;
