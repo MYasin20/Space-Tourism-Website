@@ -6,22 +6,31 @@ function Navigation() {
         <img src="/src/images/shared/logo.svg" alt="logo"/>
       </div>
       <div className="line"></div>
+      <button className="burger-menu"></button>
       <ul className="nav-lists">
         <li className="list-item is-underline-selected">
-          <span className="list-item-number">00</span>
-          <a href="/#">HOME</a>
+          <a href="/#">
+            <span className="list-item-number">00</span>
+            HOME
+          </a>
         </li>
         <li className="list-item">
-          <span className="list-item-number">01</span>
-          <a href="/#">DESTINATION</a>
+          <a href="/#">
+            <span className="list-item-number">01</span>
+            DESTINATION
+          </a>
         </li>
         <li className="list-item">
-          <span className="list-item-number">02</span>
-          <a href="/#">CREW</a>
+          <a href="/#">
+            <span className="list-item-number">02</span>
+            CREW
+          </a>
         </li>
         <li className="list-item">
-          <span className="list-item-number">03</span>
-          <a href="/#">TECHNOLOGY</a>
+          <a href="/#">
+            <span className="list-item-number">03</span>
+            TECHNOLOGY
+          </a>
         </li>
       </ul>
     </nav>

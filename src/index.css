@@ -23,59 +23,69 @@
   --letter-space-sub-head-2: 2.35px;
 }
 
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-clr);
+  min-width: 375px;
+}
+
+/* Burger Menu */
+.burger-menu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: url(/src/images/shared/icon-hamburger.svg) no-repeat center;
+  margin-right: 25px;
+}
+
+/* ----- Background ----- */
+
 .landing-bg {
   min-height: 100vh;
   background-color: var(--bg-clr);
   background: no-repeat url('./images/home/background-home-desktop.jpg') center/cover;
 }
 
-/* Navigation */
+/* ----- Navigation ----- */
 
 .is-underline-selected {
   border-bottom: 3px solid var(--clr-secondary);
 }
-
 .nav {
-  width: 100%;
-  height: 100px;
-  padding: 40px 0 0 40px;
+  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .logo {
-  flex: 7% 0 0;
+  margin-left: 3rem;
+  flex-shrink: 0;
+  flex-basis: 10%;
 }
 .line {
   border-bottom: 1px solid grey;
-  flex: 30%;
-  padding-left: 50px;
+  flex: 1;
   position: relative;
-  left: 15px;
+  left: 45px;
   z-index: 2;
 }
 .nav-lists {
-  flex: 50%;
   display: flex;
-  /*align-items: center; */
+  flex: 1.3;
+  gap: 2.5rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
   font-family: var(--font-family-secondary);
   letter-spacing: var(--letter-space-nav);
-  padding-left: 95px;
-  height: 80px;
+  padding-inline: 5rem;
 }
-
 .list-item {
-  margin-right: 30px;
-  padding-top: 26px;
-  height: inherit;
-}
-.list-item:last-child {
-  margin-right: 150px;
+  padding: 1.75rem 0;
 }
 .list-item:hover {
   cursor: pointer;
+  border-bottom: 3px solid hsla(0, 0%, 100%, 0.5);
 }
 .list-item-number {
   font-weight: bold;
@@ -84,4 +94,66 @@
 }
 .list-item a {
   color: var(--clr-secondary);
+}
+
+/* ----- Navigation Media Queries ----- */
+@media (max-width: 1024px) { /* LAPTOP SIZE */
+  .nav-lists {
+    width: 650px;
+  }
+}
+
+@media (max-width: 768px) { /* TABLET SIZE */
+  .landing-bg {
+    background: no-repeat url('./images/home/background-home-tablet.jpg') center/cover;
+  }
+  .logo {
+    flex: 1 0;
+  }
+  
+  .line {
+    display: none;
+  }
+  .nav-lists {
+    height: inherit;
+    align-items: center;
+  }
+  .list-item-number {
+    display: none;
+  }
+}
+
+@media(min-width: 700px) and (max-width: 768px) {
+  .nav {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .burger-menu {
+    display: block;
+    z-index: 99999;
+  }
+  .nav-lists {
+    position: absolute;
+    flex-direction: column;
+    padding: 5rem 2rem 5rem 4rem;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 400px;
+    align-items: flex-start;
+    transform: translate(100%);
+    /* transition: transform ease-out 1ms; */
+  }
+  .list-item {
+    padding: 0 0 0.5rem;
+  }
+  .list-item-number {
+    display: inline-block;
+  }
+  .menu-open {
+    transform: translate(0%);
+    /* transition: transform ease-out 1ms; */
+  }
 }
