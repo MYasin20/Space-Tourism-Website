@@ -23,6 +23,15 @@
   --letter-space-sub-head-2: 2.35px;
 }
 
+h1,h2,h3,h4,.sub-head-1,.body-text {
+  font-family: var(--font-family-primary);
+  font-weight: var(--font-weight-normal);
+}
+h5,nav,.sub-head-2 {
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-normal);
+}
+
 body {
   overflow-x: hidden;
   background-color: var(--bg-clr);
@@ -42,6 +51,9 @@ body {
 /* ----- Background ----- */
 
 .landing-bg {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
   min-height: 100vh;
   background-color: var(--bg-clr);
   background: no-repeat url('./images/home/background-home-desktop.jpg') center/cover;
@@ -76,7 +88,6 @@ body {
   gap: 2.5rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
-  font-family: var(--font-family-secondary);
   letter-spacing: var(--letter-space-nav);
   padding-inline: 5rem;
 }
@@ -155,5 +166,70 @@ body {
   .menu-open {
     transform: translate(0%);
     /* transition: transform ease-out 1ms; */
+  }
+}
+
+/* Landing Page */
+.landing-page {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+.left-section {
+  flex: 0.4;
+  padding-left: 2rem;
+}
+.sub-heading-5 {
+  font-size: var(--fs-head-subhead);
+  letter-spacing: var(--letter-space-head-5);
+  color: var(--clr-primary);
+}
+.heading {
+  font-size: var(--fs-head-1);
+  color: var(--clr-secondary);
+}
+.body-text {
+  font-size: var(--fs-text);
+  color: var(--clr-primary);
+  width: 450px;
+  min-width: 350px;
+}
+.btn-hover {
+  background: transparent;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 375px;
+  height: 375px;
+  border-radius: 50%;
+  font-size: var(--fs-head-4);
+}
+.btn-explore {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 0;
+  background: var(--clr-secondary);
+  width: 270px;
+  height: 270px;
+}
+.btn-hover:hover {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  transition: background-color 0.8s cubic-bezier(0.17, 0.29, 0.36, 1.11);
+}
+
+/* ----- Landing Page Media Queries ----- */
+
+@media (max-width: 768px) {
+  .landing-bg {
+    gap: 3.5rem;
+  }
+  .landing-page {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .left-section {
+    padding-left: 0;
   }
 }
