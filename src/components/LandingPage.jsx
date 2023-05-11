@@ -1,9 +1,7 @@
-import Navigation from './Navigation.jsx';
 
 function LandingPage() {
   return (
     <div className='landing-bg'>
-      <Navigation />
       <div className='landing-page'>
           <div className='left-section'>
             <h5 className='sub-heading-5'>SO, YOU WANT TO TRAVEL TO</h5>

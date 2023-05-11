@@ -3,7 +3,9 @@ function Navigation() {
   return (
     <nav className="nav">
       <div className="logo">
-        <img src="/src/images/shared/logo.svg" alt="logo"/>
+        <a href="/" alt="home">
+          <img src="/src/images/shared/logo.svg" alt="logo"/>
+        </a>
       </div>
       <div className="line"></div>
       <button className="burger-menu"></button>

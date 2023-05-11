@@ -51,10 +51,6 @@ body {
 /* ----- Background ----- */
 
 .landing-bg {
-  display: flex;
-  flex-direction: column;
-  gap: 10rem;
-  min-height: 100vh;
   background-color: var(--bg-clr);
   background: no-repeat url('./images/home/background-home-desktop.jpg') center/cover;
 }
@@ -65,6 +61,10 @@ body {
   border-bottom: 3px solid var(--clr-secondary);
 }
 .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   padding-top: 2rem;
   display: flex;
   align-items: center;
@@ -108,12 +108,6 @@ body {
 }
 
 /* ----- Navigation Media Queries ----- */
-@media (max-width: 1024px) { /* LAPTOP SIZE */
-  .nav-lists {
-    width: 650px;
-  }
-}
-
 @media (max-width: 768px) { /* TABLET SIZE */
   .landing-bg {
     background: no-repeat url('./images/home/background-home-tablet.jpg') center/cover;
@@ -121,7 +115,6 @@ body {
   .logo {
     flex: 1 0;
   }
-  
   .line {
     display: none;
   }
@@ -143,9 +136,10 @@ body {
 @media (max-width: 700px) {
   .burger-menu {
     display: block;
-    z-index: 99999;
+    z-index: 1000;
   }
   .nav-lists {
+    display: none; /* for now (there is bug) or maybe it needs to be hide anyway*/
     position: absolute;
     flex-direction: column;
     padding: 5rem 2rem 5rem 4rem;
@@ -169,11 +163,13 @@ body {
   }
 }
 
-/* Landing Page */
+/* ----- Landing Page Section ----- */
 .landing-page {
   display: flex;
-  flex: 1;
+  min-height: 100vh;
+  align-items: flex-end;
   justify-content: space-around;
+  padding-block: 8rem;
 }
 .left-section {
   flex: 0.4;
@@ -192,7 +188,6 @@ body {
   font-size: var(--fs-text);
   color: var(--clr-primary);
   width: 450px;
-  min-width: 350px;
 }
 .btn-hover {
   background: transparent;
@@ -220,16 +215,55 @@ body {
 
 /* ----- Landing Page Media Queries ----- */
 
-@media (max-width: 768px) {
-  .landing-bg {
-    gap: 3.5rem;
-  }
+@media (max-width: 768px) { /* TABLET SIZE */
   .landing-page {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: flex-end;
+    padding-bottom: 0;
   }
   .left-section {
+    flex: 0;
     padding-left: 0;
   }
+  .sub-heading-5 {
+    font-size: 1.25rem;
+  }
+  .btn-explore {
+    width: 240px;
+    height: 240px;
+  }
+  .btn-hover {
+    width: 345px;
+    height: 345px;
+  }
+}
+
+@media (max-width: 500px) { /* Going MOBILE SIZE */
+  .landing-page {
+    justify-content: center;
+  }
+  .left-section {
+    padding-inline: 1.2rem;
+  }
+  .sub-heading-5 {
+    font-size: var(--fs-nav);
+  }
+  .heading {
+    font-size: 5rem;
+  }
+  .body-text {
+    font-size: 0.9375rem;
+    width: auto;
+  }
+}
+
+/* ----- Destination Section ----- */
+.destination {
+  background-image: url('./images/destination/background-destination-desktop.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
