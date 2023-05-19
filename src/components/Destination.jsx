@@ -38,13 +38,7 @@ function Destination() {
   useEffect(() => {
     setSelectedPlanet(destinationsDB[0]);
   }, [])
-  /* create function that handle the selected destination
-    check the 'name' of object and compare to the clicked
-      filter the output and display the new result
-      ---------------------------------------------
-      in database display first index only (marked as higlight in display)
-      
-  */
+  
   function handleDestination(e) {
     const selectedDestination = e.target.textContent.toLowerCase();
     const newDestination = destinationsDB.find((destination) => destination.name === selectedDestination);
