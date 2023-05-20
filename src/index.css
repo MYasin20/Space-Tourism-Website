@@ -62,6 +62,17 @@ body {
   background-repeat: no-repeat;
 }
 
+.crew-bg {
+  background: url('./images//crew/background-crew-desktop.jpg') center/cover no-repeat;
+}
+
+.section-title {
+  opacity: 0.25;
+  font-weight: bold;
+  color: var(--clr-secondary);
+  padding-right: 1rem;
+}
+
 /* ----- Navigation ----- */
 
 .is-underline-selected {
@@ -288,12 +299,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-.destination-display .destination-number {
-  opacity: 0.25;
-  font-weight: bold;
-  color: var(--clr-secondary);
-  padding-right: 1rem;
-}
 .destination-display .sub-heading-5 {
   margin-bottom: 4rem;
   text-transform: uppercase;
@@ -436,4 +441,57 @@ body {
   .destination-information .body-text {
     width: 20rem;
   }
+}
+
+/* ----- Crew Section ----- */
+.crew {
+  min-height: 100vh;
+  padding-block: 8rem 0;
+  display: flex;
+  margin-inline: 3rem;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 10rem;
+}
+.crew-left-side {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  align-items: flex-start;
+  height: 600px;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  flex-basis: 570px;
+}
+.crew-left-side .sub-heading-5 {
+  text-transform: uppercase;
+}
+.heading-4 {
+  font-size: var(--fs-head-4);
+  text-transform: uppercase;
+  opacity: 0.5;
+  color: var(--clr-secondary);
+}
+.heading-3 {
+  font-size: var(--fs-head-3);
+  color: var(--clr-secondary);
+  text-transform: uppercase;
+}
+.crew-information .body-text {
+  margin: 1.8rem 0 5rem;
+}
+.page {
+  display: flex;
+  gap: 1rem;
+}
+.btn-dot {
+  width: 18px;
+  height: 18px;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border-radius: 50%;
+}
+.dot-active {
+  background-color: var(--clr-secondary);
+}
+.crew-image {
 }

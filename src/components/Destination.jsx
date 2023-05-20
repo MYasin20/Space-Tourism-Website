@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-// import DestinationsSelection from "./DestinationsSelection";
 
 function Destination() {
   const [selectedPlanet, setSelectedPlanet] = useState({
@@ -51,7 +50,7 @@ function Destination() {
 
         <div className="destination-display">
           <h5 className="sub-heading-5">
-            <span className="destination-number">01</span>
+            <span className="section-title">01</span>
             Pick Your Destination
           </h5>
           <img src={selectedPlanet.image} alt={selectedPlanet.name} />
@@ -70,6 +69,7 @@ function Destination() {
             <p className="body-text">{selectedPlanet.details}</p>
             
             <div className="avg-travel">
+
               <div className="avg-distance">
                 <div className="sub-head-2">Avg. Distance</div>
                 <div className="des-head-2">{selectedPlanet.distance}</div> 
@@ -78,9 +78,10 @@ function Destination() {
                 <div className="sub-head-2">Est. Travel Time</div>
                 <div className="des-head-2">{selectedPlanet.travel}</div> 
               </div>
+
             </div>
           </div>
-          {/* <DestinationsSelection /> */}
+
         </div>
       </div>
 
