@@ -66,6 +66,18 @@ body {
   background: url('./images//crew/background-crew-desktop.jpg') center/cover no-repeat;
 }
 
+/* FONTS */
+.heading-4 {
+  font-size: var(--fs-head-4);
+  text-transform: uppercase;
+  opacity: 0.5;
+  color: var(--clr-secondary);
+}
+.heading-3 {
+  font-size: var(--fs-head-3);
+  color: var(--clr-secondary);
+  text-transform: uppercase;
+}
 .section-title {
   opacity: 0.25;
   font-weight: bold;
@@ -208,11 +220,13 @@ body {
   font-size: var(--fs-head-1);
   color: var(--clr-secondary);
 }
+.left-section .body-text {
+  width: 450px; /* move it to the appropirate class */
+}
 .body-text {
   font-size: var(--fs-text);
   color: var(--clr-primary);
   line-height: 1.8;
-  width: 450px; /* move it to the appropirate class */
 }
 .btn-hover {
   background: transparent;
@@ -340,7 +354,7 @@ body {
 .destination-information .body-text {
   font-family: var(--font-family-secondary);
   letter-spacing: 1px;
-  width: 25rem
+  width: 25rem;
 }
 .destination-information .avg-travel {
   margin-top: 2rem;
@@ -444,54 +458,131 @@ body {
 }
 
 /* ----- Crew Section ----- */
-.crew {
+.crew-container {
+  flex-direction: column;
   min-height: 100vh;
-  padding-block: 8rem 0;
+  padding-top: 8rem;
   display: flex;
   margin-inline: 3rem;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+  /* gap: 10rem; */
+}
+.crew-container .sub-heading-5 {
+  margin-left: 3.2rem;
+  text-transform: uppercase;
+}
+.crew {
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   gap: 10rem;
+  flex-wrap: wrap;
 }
-.crew-left-side {
-  display: flex;
-  flex-direction: column;
-  padding: 0 2rem;
-  align-items: flex-start;
-  height: 600px;
-  justify-content: space-between;
-  margin-bottom: 5rem;
-  flex-basis: 570px;
-}
-.crew-left-side .sub-heading-5 {
-  text-transform: uppercase;
-}
-.heading-4 {
-  font-size: var(--fs-head-4);
-  text-transform: uppercase;
-  opacity: 0.5;
-  color: var(--clr-secondary);
-}
-.heading-3 {
-  font-size: var(--fs-head-3);
-  color: var(--clr-secondary);
-  text-transform: uppercase;
+.crew-information {
+  flex-basis: 520px;
+  height: 530px;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* padding: 0 2rem; */
+  /* align-items: flex-start; */
+  /* height: 600px; */
+  /* justify-content: space-between; */
+  /* margin-bottom: 5rem; */
 }
 .crew-information .body-text {
-  margin: 1.8rem 0 5rem;
+  margin-block: 1rem 8rem;
+  width: 25rem; /* 400px */
 }
 .page {
   display: flex;
   gap: 1rem;
+}
+.crew-img-container {
+  flex-shrink: 0;
 }
 .btn-dot {
   width: 18px;
   height: 18px;
   background-color: hsla(0, 0%, 100%, 0.5);
   border-radius: 50%;
+  cursor: pointer;
+}
+.btn-dot:hover {
+  background-color: hsla(0, 0%, 100%, 0.7);
 }
 .dot-active {
   background-color: var(--clr-secondary);
 }
-.crew-image {
+
+/* ----- Crew Page Media Queries ----- */
+@media (max-width: 1320px) {
+  .crew {
+    gap: 4rem;
+  }
+  .crew-container .sub-heading-5 {
+    margin-left: 0;
+  }
+  .crew-img {
+    width: 440px;
+  }
+  .crew-information .heading-4 {
+    font-size: 1.5rem;
+  }
+  .crew-information .heading-3 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 1016px) {
+  .crew-container .sub-heading-5 {
+    margin-block: 1rem 3rem;
+  }
+  .crew-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  .crew-information .body-text {
+    width: 29rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .btn-dot {
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 577px) {
+  .crew-container {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .crew-information {
+    order: 2;
+  }
+  .crew-information .heading-4 {
+    font-size: 1rem;
+    order: 2;
+  }
+  .crew-information .heading-3 {
+    font-size: 1.5rem;
+    order: 3;
+  }
+  .crew-information .body-text {
+    font-size: 0.9375rem;
+    order: 4;
+    margin-block: 1rem 0;
+    width: 20rem;
+    min-width: 18rem;
+  }
+  .crew-information .page {
+    order: 1;
+    margin-bottom: 3rem;
+  }
+  .crew-img-container {
+    order: 1;
+    border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+    flex-shrink: 1;
+  }
 }
