@@ -1,14 +1,16 @@
 // import LandingPage from './components/LandingPage';
 // import Destination from './components/Destination';
 import Navigation from './components/Navigation';
-import Crew from './components/Crew';
+// import Crew from './components/Crew';
+import TechnologyPage from './components/TechnologyPage';
 function App() {
   return (
     <>
       <Navigation />
       {/* <LandingPage /> */}
       {/* <Destination /> */}
-      <Crew />
+      {/* <Crew /> */}
+      <TechnologyPage />
     </>
   )
 }
