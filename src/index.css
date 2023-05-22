@@ -523,6 +523,9 @@ body {
   }
 }
 @media (max-width: 1016px) {
+  .crew-bg {
+    background-image: url('images/crew/background-crew-tablet.jpg');
+  }
   .crew-container .sub-heading-5 {
     margin-block: 1rem 3rem;
   }
@@ -543,6 +546,9 @@ body {
   }
 }
 @media (max-width: 577px) {
+  .crew-bg {
+    background-image: url('images/crew/background-crew-mobile.jpg');
+  }
   .crew-container {
     justify-content: flex-start;
     align-items: center;
