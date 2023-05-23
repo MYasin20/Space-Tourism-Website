@@ -94,11 +94,12 @@ body {
   padding-right: 1rem;
 }
 
-/* ----- Navigation ----- */
-
-.is-underline-selected {
+.selected {
   border-bottom: 3px solid var(--clr-secondary);
+  pointer-events: none;
 }
+
+/* ----- Navigation ----- */
 .nav {
   position: absolute;
   top: 0;
@@ -145,7 +146,6 @@ body {
 .list-item a {
   color: var(--clr-secondary);
 }
-
 /* ----- Navigation Media Queries ----- */
 @media (max-width: 768px) { /* TABLET SIZE */
   .landing-bg {
@@ -333,7 +333,6 @@ body {
 .current-destination {
   padding: 2.5rem 1rem;
   /* height: 480px; */
-
 }
 .destinations-selection {
   display: flex;
@@ -352,7 +351,7 @@ body {
 }
 .destinations-selection li:hover {
   color: var(--clr-secondary);
-  border-bottom: 3px solid var(--clr-secondary);
+  border-bottom: 3px solid hsla(0, 0%, 100%, 0.5);
 }
 .heading-2 {
   font-size: var(--fs-head-2); /* Fallback value */
@@ -481,18 +480,21 @@ body {
 .crew {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: 10rem;
   flex-wrap: wrap;
+}
+.crew-information .sub-heading-5 {
+  color: var(--clr-secondary);
 }
 .crew-information {
   display: flex;
   flex-direction: column;
-  height: 650px;
+  height: 600px;
   justify-content: space-around;
 }
 .crew-information .body-text {
-  margin-block: 1rem 8rem;
+  /* margin-block: 1rem 8rem; */
   width: 25rem; /* 400px */
 }
 .page {
@@ -524,7 +526,7 @@ body {
   .crew-img {
     width: 440px;
   }
-  .crew-information .heading-4 {
+  .crew-name-position .heading-4 {
     font-size: 1.7rem;
   }
   .crew-information .heading-3 {
@@ -548,6 +550,9 @@ body {
     width: 29rem;
     text-align: center;
     margin-bottom: 3rem;
+  }
+  .crew-name-position .heading-4 {
+    text-align: center;
   }
   .btn-dot {
     width: 15px;
