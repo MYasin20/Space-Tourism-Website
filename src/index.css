@@ -510,6 +510,7 @@ body {
 }
 .dot-active {
   background-color: var(--clr-secondary);
+  pointer-events: none;
 }
 
 /* ----- Crew Page Media Queries ----- */
