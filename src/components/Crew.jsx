@@ -17,7 +17,6 @@ function Crew() {
 
   function handleSelectedCrew(e) {
     const crewSelected = e.target.getAttribute('data-page-index');
-    console.log(crewSelected);
     const newCrewSelected = crewsDB.find(crew => crew.id === Number(crewSelected))
     setSelectedCrew(newCrewSelected);
   }
