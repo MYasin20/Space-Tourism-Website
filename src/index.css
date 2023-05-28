@@ -50,15 +50,9 @@ body {
 /* Burger Menu */
 .burger-menu {
   display: none;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  background: url(/src/images/shared/icon-hamburger.svg) no-repeat center;
-  margin-right: 25px;
 }
 
 /* ----- Background ----- */
-
 .landing-bg {
   background-color: var(--bg-clr);
   background: no-repeat url('./images/home/background-home-desktop.jpg') center/cover;
@@ -122,37 +116,39 @@ body {
 }
 
 /* ----- Navigation ----- */
-.nav {
+.primary-header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  padding-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 9999;
+  margin-block: 2rem;
+}
+.primary-header::after {
+  content: '';
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: hsla(0, 0%, 100%, 0.3);
+  display: block;
+  order: 1;
+  margin-right: -2.5rem;
 }
 .logo {
-  margin-left: 3rem;
+  margin: 1.5rem clamp(1.5rem, 4vw, 3rem);
   flex-shrink: 0;
-  flex-basis: 10%;
 }
-.line {
-  border-bottom: 1px solid grey;
-  flex: 1;
-  position: relative;
-  left: 45px;
-  z-index: 2;
-}
-.nav-lists {
+.primary-navigation {
   display: flex;
-  flex: 1.3;
+  order: 2;
   gap: 2.5rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(40.7742px);
   letter-spacing: var(--letter-space-nav);
-  padding-inline: 5rem;
+  padding-inline: clamp(3rem, 7vw, 7rem);
 }
 .list-item {
   padding: 1.75rem 0;
@@ -170,45 +166,48 @@ body {
   color: var(--clr-secondary);
 }
 /* ----- Navigation Media Queries ----- */
-@media (max-width: 768px) { /* TABLET SIZE */
-  .logo {
-    flex: 1 0;
-  }
-  .line {
-    display: none;
-  }
-  .nav-lists {
-    height: inherit;
+@media (max-width: 850px) { /* TABLET SIZE TARGET */
+  .primary-navigation {
     align-items: center;
+    gap: 2rem;
   }
   .list-item-number {
     display: none;
   }
 }
 
-@media(min-width: 700px) and (max-width: 768px) {
-  .nav {
-    padding-top: 0;
+@media(min-width: 570px) and (max-width: 768px) {
+  .primary-header {
+    margin-block: 0;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 570px) {
+  .primary-header::after {
+    width: 0;
+    height: 0;
+    background: none;
+  }
   .burger-menu {
     display: block;
-    z-index: 1000;
-  }
-  .nav-lists {
-    display: none; /* for now (there is bug) or maybe it needs to be hide anyway*/
     position: absolute;
+    z-index: 1000;
+    right: 1.5rem;
+    width: 1.5rem;
+    border: 0;
+    aspect-ratio: 1;
+    background: transparent;
+    background: url(/src/images/shared/icon-hamburger.svg) no-repeat center;
+  }
+  .primary-navigation {
+    position: fixed;
     flex-direction: column;
-    padding: 5rem 2rem 5rem 4rem;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 400px;
+    padding: 10rem 2rem;
+    inset: 0 0 0 30%;
     align-items: flex-start;
     transform: translate(100%);
-    /* transition: transform ease-out 1ms; */
+    z-index: 900;
+    transition: transform ease-out 500ms;
   }
   .list-item {
     padding: 0 0 0.5rem;
@@ -218,7 +217,6 @@ body {
   }
   .menu-open {
     transform: translate(0%);
-    /* transition: transform ease-out 1ms; */
   }
 }
 
@@ -310,7 +308,7 @@ body {
   }
 }
 
-@media (min-width: 375px) and (max-height: 665px) {
+@media (max-height: 665px) {
   .landing-page {
     align-content: center; 
     margin-top: 3rem;

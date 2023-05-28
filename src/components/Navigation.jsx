@@ -2,19 +2,33 @@ import { useState } from "react";
 
 function Navigation() {
   const [isSelected, setIsSelected] = useState('HOME');
+  const [isOpen, setIsOpen] = useState(false);
+
   function isUnderlineSelected(item) {
     setIsSelected(item);
   }
+  function handleMenu(e) {
+    setIsOpen(!isOpen);
+    if(isOpen) {
+      console.dir(e.currentTarget.style.backgroundImage = `url('/src/images/shared/icon-hamburger.svg')`);
+    } else {
+      console.dir(e.currentTarget.style.backgroundImage = `url('/src/images/shared/icon-close.svg')`);
+    }
+  }
+
   return (
-    <nav className="nav">
+    <nav className="primary-header">
       <div className="logo">
-        <a href="/" alt="home">
           <img src="/src/images/shared/logo.svg" alt="logo"/>
-        </a>
       </div>
-      <div className="line"></div>
-      <button className="burger-menu"></button>
-      <ul className="nav-lists">
+      
+      <button 
+        onClick={handleMenu} 
+        data-="false"
+        className="burger-menu">
+      </button>
+
+      <ul className={`primary-navigation ${isOpen ? 'menu-open': ''}`}>
         <li 
           className={`list-item ${isSelected === 'HOME' && 'selected'}`}
           onClick={() => isUnderlineSelected('HOME')}>
