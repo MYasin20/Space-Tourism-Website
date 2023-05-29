@@ -9,7 +9,7 @@ function Destination() {
     distance: '',
     travel: ''
   });
-  const [isSelected, setIsSelected] = useState(null);
+  const [isSelected, setIsSelected] = useState('Moon');
   
   useEffect(() => {
     setSelectedPlanet(destinationsDB[0]);
@@ -39,28 +39,28 @@ function Destination() {
 
         <div className="current-destination">
           <ul className="destinations-selection">
-            <li className={isSelected === 'Moon' && 'selected'} 
+            <li className={isSelected === 'Moon' ? 'selected': ''} 
               onClick={(e) => {
                 isUnderlineSelected('Moon')
                 handleDestination(e)
               }}>
               <a>Moon</a>
             </li>
-            <li className={isSelected === 'Mars' && 'selected'} 
+            <li className={isSelected === 'Mars' ? 'selected': ''} 
               onClick={(e) => {
                 isUnderlineSelected('Mars')
                 handleDestination(e)
               }}>
               <a>Mars</a>
             </li>
-            <li className={isSelected === 'Europa' && 'selected'} 
+            <li className={isSelected === 'Europa' ? 'selected': ''} 
               onClick={(e) => {
                 isUnderlineSelected('Europa')
                 handleDestination(e)
               }}>
               <a>Europa</a>
             </li>
-            <li className={isSelected === 'Titan' && 'selected'} 
+            <li className={isSelected === 'Titan' ? 'selected': ''} 
               onClick={(e) => {
                 isUnderlineSelected('Titan')
                 handleDestination(e)
