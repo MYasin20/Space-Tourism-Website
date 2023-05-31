@@ -20,7 +20,7 @@ function Navigation() {
   return (
     <nav className="primary-header">
       <div className="logo">
-        <img src="/Space-Tourism-Website/src/images/shared/logo.svg" alt="logo"/>
+        <img src="images/shared/logo.svg" alt="logo"/>
       </div>
       
       <button 
