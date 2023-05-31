@@ -11,16 +11,16 @@ function Navigation() {
   function handleMenu(e) {
     setIsOpen(!isOpen);
     if(isOpen) {
-      console.dir(e.currentTarget.style.backgroundImage = `url('/src/images/shared/icon-hamburger.svg')`);
+      console.dir(e.currentTarget.style.backgroundImage = `url('/images/shared/icon-hamburger.svg')`);
     } else {
-      console.dir(e.currentTarget.style.backgroundImage = `url('/src/images/shared/icon-close.svg')`);
+      console.dir(e.currentTarget.style.backgroundImage = `url('/images/shared/icon-close.svg')`);
     }
   }
 
   return (
     <nav className="primary-header">
       <div className="logo">
-        <img src="/Space-Tourism-Website/src/images/shared/logo.svg" alt="logo"/>
+        <img src="/images/shared/logo.svg" alt="logo"/>
       </div>
       
       <button 
