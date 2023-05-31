@@ -171,7 +171,7 @@ body {
 .list-item a {
   color: var(--clr-secondary);
 }
-.active {
+  .active {
   border-bottom: 3px solid var(--clr-secondary);
   pointer-events: none;
 }
