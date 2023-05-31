@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function Navigation() {
   const [isSelected, setIsSelected] = useState('HOME');
@@ -32,34 +33,34 @@ function Navigation() {
         <li 
           className={`list-item ${isSelected === 'HOME' && 'selected'}`}
           onClick={() => isUnderlineSelected('HOME')}>
-          <a href="/#">
+          <NavLink to="/">
             <span className="list-item-number">00</span>
             HOME
-          </a>
+          </NavLink>
         </li>
         <li 
           className={`list-item ${isSelected === 'DESTINATION' && 'selected'}`}
           onClick={() => isUnderlineSelected('DESTINATION')}>
-          <a href="/#">
+          <NavLink to="/destination">
             <span className="list-item-number">01</span>
             DESTINATION
-          </a>
+          </NavLink>
         </li>
         <li 
           className={`list-item ${isSelected === 'CREW' && 'selected'}`}
           onClick={() => isUnderlineSelected('CREW')}>
-          <a href="/#">
+          <NavLink to="/crew">
             <span className="list-item-number">02</span>
             CREW
-          </a>
+          </NavLink>
         </li>
         <li 
           className={`list-item ${isSelected === 'TECHNOLOGY' && 'selected'}`}
           onClick={() => isUnderlineSelected('TECHNOLOGY')}>
-          <a href="/#">
+          <NavLink to="/technology">
             <span className="list-item-number">03</span>
             TECHNOLOGY
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>
