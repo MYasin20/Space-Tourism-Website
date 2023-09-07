@@ -3,18 +3,18 @@ import { destinationsDB } from "../utils/database";
 
 function Destination() {
   const [selectedPlanet, setSelectedPlanet] = useState({
-    name : '',
+    name: '',
     image: '',
     details: '',
     distance: '',
     travel: ''
   });
   const [isSelected, setIsSelected] = useState('Moon');
-  
+
   useEffect(() => {
     setSelectedPlanet(destinationsDB[0]);
   }, [])
-  
+
   function handleDestination(e) {
     console.log(e.target.textContent);
     const selectedDestination = e.target.textContent.toLowerCase();
@@ -39,28 +39,28 @@ function Destination() {
 
         <div className="current-destination">
           <ul className="destinations-selection">
-            <li className={isSelected === 'Moon' ? 'selected': ''} 
+            <li className={isSelected === 'Moon' ? 'selection-active' : ''}
               onClick={(e) => {
                 isUnderlineSelected('Moon')
                 handleDestination(e)
               }}>
               <a>Moon</a>
             </li>
-            <li className={isSelected === 'Mars' ? 'selected': ''} 
+            <li className={isSelected === 'Mars' ? 'selection-active' : ''}
               onClick={(e) => {
                 isUnderlineSelected('Mars')
                 handleDestination(e)
               }}>
               <a>Mars</a>
             </li>
-            <li className={isSelected === 'Europa' ? 'selected': ''} 
+            <li className={isSelected === 'Europa' ? 'selection-active' : ''}
               onClick={(e) => {
                 isUnderlineSelected('Europa')
                 handleDestination(e)
               }}>
               <a>Europa</a>
             </li>
-            <li className={isSelected === 'Titan' ? 'selected': ''} 
+            <li className={isSelected === 'Titan' ? 'selection-active' : ''}
               onClick={(e) => {
                 isUnderlineSelected('Titan')
                 handleDestination(e)
@@ -68,20 +68,20 @@ function Destination() {
               <a>Titan</a>
             </li>
           </ul>
-          
+
           <div className="destination-information">
             <h2 className="heading-2">{selectedPlanet.name}</h2>
             <p className="body-text">{selectedPlanet.details}</p>
-            
+
             <div className="avg-travel">
 
               <div className="avg-distance">
                 <div className="sub-head-2">Avg. Distance</div>
-                <div className="des-head-2">{selectedPlanet.distance}</div> 
+                <div className="des-head-2">{selectedPlanet.distance}</div>
               </div>
               <div className="est-travel">
                 <div className="sub-head-2">Est. Travel Time</div>
-                <div className="des-head-2">{selectedPlanet.travel}</div> 
+                <div className="des-head-2">{selectedPlanet.travel}</div>
               </div>
 
             </div>
