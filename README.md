@@ -32,7 +32,7 @@ Users should be able to:
 
 <!-- - Solution URL: [https://www.frontendmentor.io/solutions/space-tourism-multipage-website-using-react-and-reactrouter-CkQ6O2x-7e] -->
 
-- Live Site URL: [https://frabjous-valkyrie-b917e8.netlify.app/]
+- Live Site URL: [https://spacetourism-react-myasin.netlify.app/]
 
 ### Built with
 
